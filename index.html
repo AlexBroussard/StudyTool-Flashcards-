@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>StudyBoost — Generative AI Flashcards</title>
+  <meta name="description" content="Small study tool: flashcards on Generative AI with supportive AI-generated images.">
+  <style>
+    body{font-family:Arial,Helvetica,sans-serif;margin:0;background:#f4f7fb;color:#111}
+    .wrap{max-width:900px;margin:2rem auto;padding:1rem}
+    header{background:#0b72b9;color:#fff;padding:1rem;border-radius:8px}
+    header h1{margin:0;font-size:1.3rem}
+    .intro{margin:1rem 0;color:#222}
+    .grid{display:grid;grid-template-columns:1fr;gap:12px}
+    @media(min-width:760px){ .grid{grid-template-columns:repeat(2,1fr)} }
+    .card{background:#fff;padding:12px;border-radius:8px;box-shadow:0 6px 18px rgba(20,30,50,0.06);display:flex;gap:12px;align-items:flex-start}
+    .card img{width:120px;height:120px;object-fit:cover;border-radius:6px}
+    .qa{flex:1}
+    .question{font-weight:700;color:#0b72b9;margin:0 0 6px}
+    .answer{display:none;margin:0;color:#333}
+    .show .answer{display:block}
+    .toggle{cursor:pointer;color:#555;font-size:0.9rem;margin-top:6px}
+    footer{margin-top:1.5rem;text-align:center;color:#666;font-size:0.9rem}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header><h1>StudyBoost — Generative AI Flashcards</h1></header>
+
+    <p class="intro">Short flashcards on Generative AI fundamentals. Click a card to show the answer. Images were generated with Google’s Nano Banana (Gemini image model) as visual aids.</p>
+
+    <div class="grid">
+      <article class="card" onclick="this.classList.toggle('show')">
+        <img src="images/flash1.png" alt="Generative AI visual">
+        <div class="qa">
+          <div class="question">What is generative AI?</div>
+          <div class="answer">Generative AI are models that create new content—text, images, or audio—by learning patterns from large datasets. They use deep learning architectures like transformers and diffusion models.</div>
+          <div class="toggle">Click to toggle answer</div>
+        </div>
+      </article>
+
+      <article class="card" onclick="this.classList.toggle('show')">
+        <img src="images/flash2.png" alt="Diffusion visual">
+        <div class="qa">
+          <div class="question">What is a diffusion model?</div>
+          <div class="answer">Diffusion models generate images by starting from noise and iteratively denoising to produce a realistic image; they are widely used for high-quality image synthesis.</div>
+          <div class="toggle">Click to toggle answer</div>
+        </div>
+      </article>
+
+      <article class="card" onclick="this.classList.toggle('show')">
+        <img src="images/flash3.png" alt="Transformer visual">
+        <div class="qa">
+          <div class="question">What is a transformer?</div>
+          <div class="answer">A transformer is a neural network architecture that uses self-attention to model relationships between tokens; it’s the backbone of many modern language models.</div>
+          <div class="toggle">Click to toggle answer</div>
+        </div>
+      </article>
+    </div>
+
+    <footer>
+      <small>Created by Your Name • Images: Gemini / Nano Banana</small>
+    </footer>
+  </div>
+</body>
+</html>
