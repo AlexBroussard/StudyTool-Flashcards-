@@ -34,11 +34,19 @@
     .grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 12px;
+      gap: 16px;
+      justify-items: center; /* Center cards horizontally */
     }
     @media (min-width: 760px) {
       .grid {
         grid-template-columns: repeat(2, 1fr);
+        justify-items: stretch;
+      }
+      /* Center the transformer card on larger screens */
+      .card.transformer {
+        grid-column: 1 / span 2;
+        justify-self: center;
+        max-width: 500px;
       }
     }
     .card {
@@ -49,16 +57,8 @@
       display: flex;
       gap: 12px;
       align-items: flex-start;
-      transition: transform 0.2s ease;
-    }
-    .card:hover {
-      transform: translateY(-3px);
-    }
-    .center-card {
-      max-width: 450px;
-      margin: 0 auto; /* centers the card */
-      display: flex;
-      justify-content: center;
+      width: 100%;
+      box-sizing: border-box;
     }
     .card img {
       width: 120px;
@@ -120,11 +120,8 @@
           <div class="toggle">Click to toggle answer</div>
         </div>
       </article>
-    </div>
 
-    <!-- Centered Transformer card -->
-    <div class="center-card">
-      <article class="card" onclick="this.classList.toggle('show')">
+      <article class="card transformer" onclick="this.classList.toggle('show')">
         <img src="images/Flash3.png" alt="Transformer visual">
         <div class="qa">
           <div class="question">What is a transformer?</div>
